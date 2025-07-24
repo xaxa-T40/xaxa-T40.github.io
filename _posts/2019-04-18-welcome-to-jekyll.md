@@ -21,7 +21,7 @@ tampilannya akan seperti berikut:
 5. Setelah saya melihat responsenya, saya mendapat clue di (Change your User-Agent to "AgentYessir".). Lalu saya mengganti User-Agent saya menjadi AgentYessir seperti dibawah:
    ![alt text](/_posts/image_compest/image-4.png) 
 6. Setelah melihat responsenya, saya mendapat clue (Great! To make it obvious for John, lets say it's From pinkus@cellmate.com.) saya menambah From line lagi di command curl saya seperti dibawah:
-   ![alt text](/assets/images/obito.jpg) 
+   ![obito](/assets/images/obito.jpg) 
 7. FLAG: `COMPFEST16{nOW_h3Lp_H1m_1n_john-O-jailmisc_8506972ce3}` 
 
 You'll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
