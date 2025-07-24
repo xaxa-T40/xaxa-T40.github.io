@@ -11,17 +11,17 @@ tags:
 ### Lets' Help John!
 1. Pertama buka web Let’s Help John http://challenges.ctf.compfest.id:9016/ dan 
 tampilannya akan seperti berikut:
-![alt text](image.png)
+![alt text](/_posts/image_compest/image.png)
 2. Lalu klik play, dan akan menjadi seperti berikut:
-   ![alt text](image-1.png)
+   ![alt text](/_posts/image_compest/image-1.png)
 3. Setelah diidentifikasi, ternyata web ini perlu referer http://state.com. Saya menggunakan curl, command dan hasilnya seperti ini di CMD
-   ![alt text](image-2.png)
+   ![alt text](/_posts/image_compest/image-2.png)
 4. Saya menyadari bahwa responsenya menunjukan kalau (Make sure his Cookie quantity is not "Limited". Make it "Unlimited"!). Disini saya menambahkan 1 line command di CMD, dan inilah hasilnya. 
-  ![alt text](image-3.png)
+  ![alt text](/_posts/image_compest/image-3.png)
 5. Setelah saya melihat responsenya, saya mendapat clue di (Change your User-Agent to "AgentYessir".). Lalu saya mengganti User-Agent saya menjadi AgentYessir seperti dibawah:
-   ![alt text](image-4.png) 
+   ![alt text](/_posts/image_compest/image-4.png) 
 6. Setelah melihat responsenya, saya mendapat clue (Great! To make it obvious for John, lets say it's From pinkus@cellmate.com.) saya menambah From line lagi di command curl saya seperti dibawah:
-   ![alt text](image-5.png) 
+   ![alt text](/_posts/image_compest/image-5.png) 
 7. FLAG: `COMPFEST16{nOW_h3Lp_H1m_1n_john-O-jailmisc_8506972ce3}` 
 
 You'll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
