@@ -51,6 +51,37 @@ mendeskripsikan panjangnya.
 ![alt text](/assets/images/Tsukusu/flash10.png)
 11. Flag: `TsukuCTF25{Tr4d1on4l_P4th_trav3rs4l}` 
 
+### Cryptography
+**a8tsukuctf (EASY)**
+
+![alt text](/assets/images/Tsukusu/crypt1.png)
+1. Diberikan file enc.py dan output.txt berupa ciphertext yang dapat di dekripsi dari code pada enc.py, kita menggunakan kode dibawah untuk melakukan dekripsi dari ciphertextnya .
+![alt text](/assets/images/Tsukusu/crypt2.png)
+1. Result dari hasil dekripsinya adalah:
+2. `ayb wpg uujoy this problem or tsukuctf, or both? the flag is concatenate the seventh word in the first sentence, the third word in the second sentence, and 'fun' with underscores.`
+3. Langkah 1: Pecah menjadi dua kalimat
+![alt text](/assets/images/Tsukusu/crypt3.png)
+  Pisahkan menjadi dua kalimat:
+  - `ayb wpg uujoy this problem or tsukuctf, or both?`
+  - `the flag is concatenate the seventh word in the first sentence, the third word in the second sentence, and 'fun' with underscores.`
+4. Langkah 2: Ambil kata-kata dari kalimat pertama 
+  Kalimat 1 (buang tanda baca, ubah jadi lowercase untuk konsistensi):
+  `ayb wpg uujoy this problem or tsukuctf or both`
+  Kata-Kata:
+  `['ayb', 'wpg', 'uujoy', 'this', 'problem', 'or', 'tsukuctf', 'or', 'both']`
+  Kata ke-7 = *tsukuctf* 
+5. Langkah 3: Ambil kata ketiga dari kalimat kedua
+   - Kalimat ke-2
+      `"the flag is concatenate the seventh word in the first sentence, the third word in the second sentence, and 'fun' with underscores."`
+    kata - kata:
+      `['the', 'flag', 'is', 'concatenate', 'the', 'seventh', 'word', 'in', 'the', 'first', 'sentence', 'the', 'third', 'word', 'in', 'the', 'second', 'sentence', 'and', 'fun', 'with', 'underscores']`
+6. Kata ke-3 = is
+7. Langkah 4: Gabungkan dengan underscore dan bungkus dalam flag format
+8. FLAG: `TsukuCTF25{tsukuctf_is_fun} ` 
+   
+ 
+    
+
 
 <!-- This theme supports **link posts**, made famous by John Gruber. To use, just add `link: http://url-you-want-linked` to the post's YAML front matter and you're done. -->
 
