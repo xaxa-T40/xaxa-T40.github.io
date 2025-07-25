@@ -68,13 +68,13 @@ mendeskripsikan panjangnya.
   Kalimat 1 (buang tanda baca, ubah jadi lowercase untuk konsistensi):
   `ayb wpg uujoy this problem or tsukuctf or both`
   Kata-Kata:
-  `['ayb', 'wpg', 'uujoy', 'this', 'problem', 'or', 'tsukuctf', 'or', 'both']`
+  ```['ayb', 'wpg', 'uujoy', 'this', 'problem', 'or', 'tsukuctf', 'or', 'both']```
   Kata ke-7 = *tsukuctf* 
 5. Langkah 3: Ambil kata ketiga dari kalimat kedua
    - Kalimat ke-2
-      `"the flag is concatenate the seventh word in the first sentence, the third word in the second sentence, and 'fun' with underscores."`
+      ```"the flag is concatenate the seventh word in the first sentence, the third word in the second sentence, and 'fun' with underscores."```
     kata - kata:
-      `['the', 'flag', 'is', 'concatenate', 'the', 'seventh', 'word', 'in', 'the', 'first', 'sentence', 'the', 'third', 'word', 'in', 'the', 'second', 'sentence', 'and', 'fun', 'with', 'underscores']`
+      ```['the', 'flag', 'is', 'concatenate', 'the', 'seventh', 'word', 'in', 'the', 'first', 'sentence', 'the', 'third', 'word', 'in', 'the', 'second', 'sentence', 'and', 'fun', 'with', 'underscores']```
 6. Kata ke-3 = is
 7. Langkah 4: Gabungkan dengan underscore dan bungkus dalam flag format
 8. FLAG: `TsukuCTF25{tsukuctf_is_fun} ` 
