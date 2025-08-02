@@ -13,7 +13,7 @@ tags:
 ### Affected Endpoint ###
 Scope
 ```
-     host/url:10.1.2.140
+    host/url:10.1.2.140
     Description: Access using hacktrace vpn
 ```
 working time: 30 agustus - 2 september 2024
@@ -55,3 +55,26 @@ Try scanning the directory again, this time it's interesting in the bio
 ```
 dirsearch -u http://10.1.2.140/bio -w /usr/share/wordlists/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt -t 50
 ```
+![alt text](/assets/images/hacktrace/multishop/image3.png)
+That's it, nothing interesting, try looking into the url
+![alt text](/assets/images/hacktrace/multishop/image4.png)
+It looks like there is no upload file, I tried view-page:source
+![alt text](/assets/images/hacktrace/multishop/image5.png)
+There is a name parameter, this can indicate input validation, let's try to change the value 
+```
+http://10.1.2.140/bio/?name=../../../etc/passwd
+```
+![alt text](/assets/images/hacktrace/multishop/image6.png)
+It turns out that we can do file inclusion, seen from the response given. 
+Referensi file inclusion :
+`https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/File%20Inclusion/README.md`
+after reading through it turns out that file inclusion using wrappers (php: //filter) can be entered, we create the payload using the php_filter_chain_generator.py tool 
+```
+python3 php_filter_chain_generator.py --chain '<?php phpinfo();?>'
+```
+later the payload will come out and paste it in the parameter name, if you want the book to continue.
+![alt text](/assets/images/hacktrace/multishop/image7.png)
+And it does, we can continue to rce, but we have to create a file and live python3 -m http.server, the steps are as follows:
+1.	Create a file with the name l (fiel that contains revshel bash) why is the name l and does not contain extensions? because so that the payload is not too long, because it is usually an error, the length of url
+ ![alt text](/assets/images/hacktrace/multishop/image8.png)
+
